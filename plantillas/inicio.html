@@ -1,4 +1,5 @@
-{{ define "inicio"}} {{ template "cabecera"}}
+{{ define "inicio"}} 
+{{ template "cabecera"}}
 
 <h1>Tabla de Ejemplo</h1>
 <a href="/crear">Agregar empleado</a>
@@ -18,10 +19,6 @@
       <td>{{.ID}}</td>
       <td>{{.Nombre}}</td>
       <td>{{.Correo}}</td>
-      <td>
-        Editar {{.Id}} |
-        <a href="/borrar?={{.Id}}">Borrar</a>
-      </td>
     </tr>
     {{end}}
   </tbody>

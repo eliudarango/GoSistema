@@ -1,7 +1,6 @@
 package controllers
 
-
-import(
+import (
 	"gosistema/model"
 	"gosistema/utils"
 	"log"
@@ -11,7 +10,7 @@ import(
 
 var plantillas = template.Must(template.ParseGlob("plantillas/*"))
 
-//Metodo para visualizar la pagina de usuarios
+// Metodo para visualizar la pagina de usuarios
 func Inicio(w http.ResponseWriter, r *http.Request) {
 	utils.IniciarConexion()
 	db := utils.IniciarConexion()
@@ -24,12 +23,13 @@ func Inicio(w http.ResponseWriter, r *http.Request) {
 
 	plantillas.ExecuteTemplate(w, "inicio", usuarios)
 }
-//Metodo para visualizar la pagina de registrar usuarios
+
+// Metodo para visualizar la pagina de registrar usuarios
 func Crear(w http.ResponseWriter, r *http.Request) {
 	plantillas.ExecuteTemplate(w, "crear", nil)
 }
 
-//Metodo para registrar usuarios
+// Metodo para registrar usuarios
 func Insertar(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		nombre := r.FormValue("nombre")
@@ -38,7 +38,7 @@ func Insertar(w http.ResponseWriter, r *http.Request) {
 		db := utils.IniciarConexion()
 
 		user := model.Usuario{
-			Nombre:  nombre,
+			Nombre: nombre,
 			Correo: correo,
 		}
 		if err := db.Create(&user).Error; err != nil {
@@ -49,4 +49,15 @@ func Insertar(w http.ResponseWriter, r *http.Request) {
 
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
+
+}
+
+// Metodo para borrar usuarios
+func Borrar(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// Metodo para editar usuarios
+func Editar(w http.ResponseWriter, r *http.Request) {
+
 }
