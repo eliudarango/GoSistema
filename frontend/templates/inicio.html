@@ -1,0 +1,27 @@
+{{ define "inicio"}} 
+{{ template "cabecera"}}
+
+<h1>Tabla de Ejemplo</h1>
+<a href="/crear">Agregar empleado</a>
+<!-- Tabla básica -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#ID</th>
+      <th>Nombre:</th>
+      <th>Correo:</th>
+      <th>Acciones:</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{range .}}
+    <tr>
+      <td>{{.ID}}</td>
+      <td>{{.Name}}</td>
+      <td>{{.Email}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+{{ template "pie"}} {{end}}

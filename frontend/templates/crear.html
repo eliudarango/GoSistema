@@ -1,0 +1,31 @@
+{{define "crear"}}
+{{template "cabecera"}}
+
+<div class="d-flex justify-content-center"></div>
+   <div class="card" style="width:18rem;">
+
+    <div class="card-body">
+        <h5 class="card-title">Empleados</h5>
+        <h6 class="card-subtitle mb-2 text-muted ">Agregar empleado</h6>
+
+        <form action="/insertar" method="post" id="empleadoForm">
+            <div id="users">
+                <div class="user">
+                    <div class="mb-3">
+                        <label for="nombreEmpleado" class="form-label">Nombre del Empleado</label>
+                        <input type="text" class="form-control" id="nombre" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="correoEmpleado" class="form-label">Correo del Empleado</label>
+                        <input type="email" class="form-control" id="correo" name="email">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3">Agregar empleado</button>
+        </form>
+    </div>
+   </div>
+</div>
+{{ template "pie"}}
+{{end}}

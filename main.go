@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gosistema/routes"
+	"gosistema/backend/routes"
 )
 
 func main() {
