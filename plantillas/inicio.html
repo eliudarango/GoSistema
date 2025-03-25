@@ -16,8 +16,12 @@
     {{range .}}
     <tr>
       <td>{{.ID}}</td>
-      <td>{{.Name}}</td>
-      <td>{{.Email}}</td>
+      <td>{{.Nombre}}</td>
+      <td>{{.Correo}}</td>
+      <td>
+        Editar {{.Id}} |
+        <a href="/borrar?={{.Id}}">Borrar</a>
+      </td>
     </tr>
     {{end}}
   </tbody>
