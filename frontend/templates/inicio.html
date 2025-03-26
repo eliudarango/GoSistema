@@ -1,5 +1,4 @@
-{{ define "inicio"}} 
-{{ template "cabecera"}}
+{{ define "inicio"}} {{ template "cabecera"}}
 
 <h1>Tabla de Ejemplo</h1>
 <a href="/crear">Agregar empleado</a>
@@ -19,6 +18,18 @@
       <td>{{.ID}}</td>
       <td>{{.Name}}</td>
       <td>{{.Email}}</td>
+      <td>
+        <!-- Botón de editar -->
+        <a href="/editar?id={{.ID}}" class="btn btn-warning">Editar</a>
+
+        <!-- Botón de borrar -->
+        <a
+          href="/borrar?id={{.ID}}"
+          class="btn btn-danger"
+          onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');"
+          >Borrar</a
+        >
+      </td>
     </tr>
     {{end}}
   </tbody>

@@ -13,8 +13,11 @@ func LoadRouters() {
 	//http.HandleFunc("/welcome", controllers.WelcomePage)
 	http.HandleFunc("/", controllers.Inicio)
 	http.HandleFunc("/crear", controllers.Crear)
+	http.HandleFunc("/editar", controllers.Editar)
+	http.HandleFunc("/borrar", controllers.Borrar)
 	// METODOS POST
 	http.HandleFunc("/insertar", controllers.Insertar)
+	http.HandleFunc("/actualizar", controllers.Actualizar)
 	log.Println("Servidor corriendo...")
 	http.ListenAndServe(":8080", nil)
 }
